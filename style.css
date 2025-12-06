@@ -187,20 +187,15 @@ body {
     padding: 15px;
     border-radius: 8px;
 }
-
-/* CONTACT */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.cert-card a:hover{
+    background-color:#c26bf2;
+    color:#ffffff;
 }
 
-input, textarea {
-    padding: 12px;
-    border: 1px solid var(--accent);
-    border-radius: 6px;
-    background: transparent;
-    color: var(--text);
+/* CONTACT */
+.contact{
+    text-align: center;
+    color:#000;
 }
 
 footer {
