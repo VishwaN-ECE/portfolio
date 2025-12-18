@@ -84,18 +84,23 @@ loadCerts();
 const achieveList = document.getElementById("achievement-list");
 
 async function loadAchievements() {
-    const res = await fetch(achieveURL);
-    const data = await res.json();
-    achieveList.innerHTML = "";
+  const res = await fetch(achieveURL);
+  const data = await res.json();
+  achieveList.innerHTML = "";
 
-    data.forEach(a => {
-        achieveList.innerHTML += `
-            <div class="cert-card">
-                <h3>${a.title}</h3>
-                <p>${a.description}</p>
-                <small>${a.year}</small>
-            </div>`;
-    });
+  data.forEach(a => {
+    achieveList.innerHTML += `
+      <div class="achievement-card">
+        <img src="${a.image}" class="achievement-img" alt="${a.title}">
+        <div>
+          <h3>${a.title}</h3>
+          <p>${a.description}</p>
+          <small>${a.year}</small>
+        </div>
+      </div>
+    `;
+  });
 }
 
 loadAchievements();
+
