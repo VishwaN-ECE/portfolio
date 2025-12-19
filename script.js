@@ -6,7 +6,7 @@ const achieveURL  = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vish
 
 
 // ================= SKILLS =================
-// ================= SKILLS =================
+
 const skillsURL = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/main/skills.json";
 const skillsGrid = document.querySelector(".skills-grid");
 
@@ -137,40 +137,58 @@ async function loadAchievements() {
 loadAchievements();
 
 // ================= TYPING ANIMATION =================
-document.addEventListener("DOMContentLoaded", () => {
 
-  const titleElement = document.getElementById("typing-title");
-  const subtitleElement = document.getElementById("typing-subtitle");
+const text1 = "Hello! Welcome to My Portfolio, I'm ";
+const nameText = "Vishwa N";
+const text2 = " — Innovator & Engineer";
+const subText = "Let's Explore My Site";
 
-  if (!titleElement || !subtitleElement) return;
+const typeTextEl = document.getElementById("type-text");
+const nameEl = document.getElementById("name-text");
+const suffixEl = document.getElementById("suffix-text");
+const subEl = document.getElementById("type-sub");
 
-  const titleText = `Hello! Welcome to My Portfolio, I'm <span class="gradient-text">Vishwa N</span> — Innovator & Engineer`;
-  const subtitleText = "Let's Explore My Site";
+let i = 0, j = 0, k = 0;
 
-  let titleIndex = 0;
-  let subtitleIndex = 0;
-
-  function typeTitle() {
-    if (titleIndex < titleText.length) {
-      titleElement.innerHTML += titleText.charAt(titleIndex);
-      titleIndex++;
-      setTimeout(typeTitle, 50);
-    } else {
-      setTimeout(typeSubtitle, 400);
-    }
+function typeMain() {
+  if (i < text1.length) {
+    typeTextEl.textContent += text1.charAt(i);
+    i++;
+    setTimeout(typeMain, 50);
+  } else {
+    typeName();
   }
+}
 
-  function typeSubtitle() {
-    if (subtitleIndex < subtitleText.length) {
-      subtitleElement.innerHTML += subtitleText.charAt(subtitleIndex);
-      subtitleIndex++;
-      setTimeout(typeSubtitle, 60);
-    }
+function typeName() {
+  if (j < nameText.length) {
+    nameEl.textContent += nameText.charAt(j);
+    j++;
+    setTimeout(typeName, 70);
+  } else {
+    typeSuffix();
   }
+}
 
-  typeTitle();
-});
+function typeSuffix() {
+  if (k < text2.length) {
+    suffixEl.textContent += text2.charAt(k);
+    k++;
+    setTimeout(typeSuffix, 40);
+  } else {
+    typeSub();
+  }
+}
 
+let s = 0;
+function typeSub() {
+  if (s < subText.length) {
+    subEl.textContent += subText.charAt(s);
+    s++;
+    setTimeout(typeSub, 60);
+  }
+}
 
-
+// Start animation
+typeMain();
 
