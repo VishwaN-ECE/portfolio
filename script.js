@@ -57,7 +57,7 @@ function displayProjects(projects) {
     `;
   });
 }
-
+/*
 // Filter buttons
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
@@ -77,6 +77,7 @@ filterButtons.forEach(button => {
     }
   });
 });
+*/
 
 loadProjects();
 
@@ -169,5 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   typeTitle();
 });
+
 
 
