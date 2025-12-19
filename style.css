@@ -310,4 +310,10 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+#typing-title, #typing-subtitle {
+  min-height: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 
