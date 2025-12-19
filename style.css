@@ -165,31 +165,92 @@ body {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
 .project-card {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 100px;
+  background: #d6d6d6;
+  border-radius: 16px;
+  padding: 15px;
+  height: 380px;              /* SAME HEIGHT */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;              /* SAME IMAGE HEIGHT */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.project-category {
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+}
+
+.project-card p {
+  font-size: 14px;
+  margin-top: 8px;
+  flex-grow: 1;               /* pushes content evenly */
+}
+
+
 /* CERTIFICATIONS */
-.cert-list {
-    display: grid;
-    gap: 10px;
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .cert-card {
-    background: var(--card);
-    padding: 15px;
-    border-radius: 8px;
+  background: #d6d6d6;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  height: 300px;              /* SAME SIZE */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
 }
-.cert-card a:hover{
-    background-color:#c26bf2;
-    color:#ffffff;
+
+.cert-card:hover {
+  transform: translateY(-6px);
+}
+
+.cert-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;        /* IMPORTANT for icons */
+  margin: 0 auto;
+}
+
+.cert-card h3 {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.cert-card p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
 }
 
 /* CONTACT */
@@ -249,3 +310,4 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
