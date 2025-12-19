@@ -9,6 +9,8 @@ const achieveURL  = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vish
 const skillsGrid = document.querySelector(".skills-grid");
 
 async function loadSkills() {
+  if (!skillsGrid) return; // safety
+
   const res = await fetch(skillsURL);
   const skills = await res.json();
 
@@ -28,12 +30,14 @@ loadSkills();
 
 
 // ================= PROJECTS =================
-const projectsGrid = document.querySelector(".projects-grid");
+const projectsGrid  = document.querySelector(".projects-grid");
 const filterButtons = document.querySelectorAll(".project-filters button");
 
 let allProjects = [];
 
 async function loadProjects() {
+  if (!projectsGrid) return;
+
   const res = await fetch(projectsURL);
   allProjects = await res.json();
   displayProjects(allProjects);
@@ -81,6 +85,8 @@ loadProjects();
 const certList = document.getElementById("cert-list");
 
 async function loadCerts() {
+  if (!certList) return;
+
   const res = await fetch(certURL);
   const data = await res.json();
 
@@ -106,6 +112,8 @@ loadCerts();
 const achieveList = document.getElementById("achievement-list");
 
 async function loadAchievements() {
+  if (!achieveList) return;
+
   const res = await fetch(achieveURL);
   const data = await res.json();
 
