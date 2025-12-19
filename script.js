@@ -134,3 +134,33 @@ async function loadAchievements() {
 }
 
 loadAchievements();
+// ================= TYPING ANIMATION =================
+const titleText = `Hello! Welcome to My Portfolio, I'm <span class="gradient-text">Vishwa N</span> — Innovator & Engineer`;
+const subtitleText = "Let's Explore My Site";
+
+const titleElement = document.getElementById("typing-title");
+const subtitleElement = document.getElementById("typing-subtitle");
+
+let titleIndex = 0;
+let subtitleIndex = 0;
+
+function typeTitle() {
+  if (titleIndex < titleText.length) {
+    titleElement.innerHTML += titleText.charAt(titleIndex);
+    titleIndex++;
+    setTimeout(typeTitle, 50); // speed
+  } else {
+    setTimeout(typeSubtitle, 400); // delay before subtitle
+  }
+}
+
+function typeSubtitle() {
+  if (subtitleIndex < subtitleText.length) {
+    subtitleElement.innerHTML += subtitleText.charAt(subtitleIndex);
+    subtitleIndex++;
+    setTimeout(typeSubtitle, 60);
+  }
+}
+
+typeTitle();
+
