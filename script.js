@@ -6,18 +6,27 @@ const achieveURL = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishw
 
 
 // ---------------- SKILLS ----------------
+const skillsURL = "skills.json";
 const skillsGrid = document.querySelector(".skills-grid");
 
-async function loadSkills(){
-    const res = await fetch(skillsURL);
-    const data = await res.json();
-    skillsGrid.innerHTML = "";
+async function loadSkills() {
+  const res = await fetch(skillsURL);
+  const skills = await res.json();
 
-    data.forEach(s => {
-        skillsGrid.innerHTML += `<div class="skill-card">${s.skill}</div>`;
-    });
+  skillsGrid.innerHTML = "";
+
+  skills.forEach(skill => {
+    skillsGrid.innerHTML += `
+      <div class="skill-card">
+        <img src="${skill.icon}" alt="${skill.name}">
+        <p>${skill.name}</p>
+      </div>
+    `;
+  });
 }
+
 loadSkills();
+
 
 
 // ---------------- PROJECTS ----------------
@@ -118,6 +127,7 @@ async function loadAchievements() {
 }
 
 loadAchievements();
+
 
 
 
