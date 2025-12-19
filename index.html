@@ -4,144 +4,133 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vishwa N | Portfolio</title>
-<link rel="stylesheet" href="style.css">
-</head>
 
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+</head>
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
-    <div class="logo">Vishwa<span> N</span></div>
-    <nav>
-        <ul style="list-style:none;">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <div class="logo">Vishwa<span> N</span></div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
 <div class="luxury-bg"></div>
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 <section id="home" class="section home">
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <h1 style="font-family: 'Satisfy', cursive;">
-        Hello! Welcome to My Portfolio, I'm 
-        <span class="gradient-text"> Vishwa N</span> — Innovator & Engineer
-    </h1>
-    <h2>Let's Explore My Site</h2>
-    <a href="#projects" class="btn">View My Work</a>
-    <a href="resume.pdf" download class="btn-outline">Download Resume</a>
+
+  <!-- Typing animation text -->
+  <h1 id="typing-title" style="font-family:'Satisfy', cursive;"></h1>
+  <h2 id="typing-subtitle"></h2>
+
+  <a href="#projects" class="btn">View My Work</a>
+  <a href="resume.pdf" download class="btn-outline">Download Resume</a>
+
 </section>
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 <section id="about" class="section about">
+  <h2 class="gradient-text">About Me</h2>
 
-    <h2 class="gradient-text">About Me</h2>
-
-    <div class="about-container">
-        <div class="about-photo">
-            <img src="image.png" alt="Vishwa Photo">
-        </div>
-
-        <div class="about-text">
-            <h2>
-                I'm an Electronics and Communication Engineering student passionate about 
-                IoT systems, Embedded design, DSA, Drone technology, and Image Processing. 
-                I enjoy building real-world engineering solutions using hardware + software.
-            </h2>
-        </div>
+  <div class="about-container">
+    <div class="about-photo">
+      <img src="image.png" alt="Vishwa Photo">
     </div>
+
+    <div class="about-text">
+      <p>
+        I'm an Electronics and Communication Engineering student passionate about
+        IoT systems, Embedded design, DSA, Drone technology, and Image Processing.
+        I enjoy building real-world engineering solutions using hardware + software.
+      </p>
+    </div>
+  </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ================= SKILLS ================= -->
 <section id="skills" class="section skills">
-    <h2 class="gradient-text">Skills</h2>
-    <div class="skills-grid">
-        <!-- Dynamic -->
-    </div>
+  <h2 class="gradient-text">Skills</h2>
+  <div class="skills-grid"></div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ================= PROJECTS ================= -->
 <section id="projects" class="section projects">
-    <h2 class="gradient-text">Projects</h2>
+  <h2 class="gradient-text">Projects</h2>
 
-    <div class="filter-buttons">
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="IoT">IoT</button>
-        <button class="filter-btn" data-category="Electronics">Electronics</button>
-        <button class="filter-btn" data-category="Image Processing">Digital Image Watermarking</button>
-    </div>
+  <div class="project-filters">
+    <button class="active" data-filter="All">All</button>
+    <button data-filter="IoT">IoT</button>
+    <button data-filter="Electronics">Electronics</button>
+    <button data-filter="Digital Image Watermarking">
+      Digital Image Watermarking
+    </button>
+  </div>
 
-    <div class="projects-grid">
-        <!-- Dynamic -->
-    </div>
+  <div class="projects-grid"></div>
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- ================= CERTIFICATIONS ================= -->
 <section id="certifications" class="section certifications">
-    <h2 class="gradient-text">Certifications</h2>
-    <p class="small-note">Certfication Courses Completed.</p>
+  <h2 class="gradient-text">Certifications</h2>
+  <p class="small-note">Certification Courses Completed.</p>
 
-    <div id="cert-list" class="cert-list">
-        <!-- Dynamic -->
-    </div>
+  <div id="cert-list" class="cert-list"></div>
 </section>
 
-<!-- ✅ NEW ACHIEVEMENTS -->
+<!-- ================= ACHIEVEMENTS ================= -->
 <section id="achievements" class="section achievements">
-    <h2 class="gradient-text">Achievements</h2>
-
-    <div id="achievement-list" class="cert-list">
-        <!-- Dynamic -->
-    </div>
+  <h2 class="gradient-text">Achievements</h2>
+  <div id="achievement-list" class="cert-list"></div>
 </section>
-<center>
-<!-- CONTACT -->
- <section id="contact" class="section contact">   
-<h2 class="gradient-text">Contact Me</h2>
-<div class="contact-links">
 
-  <!-- Email -->
-  <a href="mailto:snarayanan27031973_bec27@mepcoeng.ac.in" class="contact-item">
-    <img src="icons/message.png" alt="Email">
-    <h3>Email</h3>
-  </a>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section contact">
+  <h2 class="gradient-text">Contact Me</h2>
 
-  <!-- Mobile -->
-  <a href=":+916380421564" class="contact-item">
-    <img src="icons/contact.png" alt="Phone">
-    <h3>Message/Call</h3>
-  </a>
+  <div class="contact-links">
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/vishwan26012006"
-     target="_blank"
-     class="contact-item">
-    <img src="icons/linkedin.png" alt="LinkedIn">
-    <h3>LinkedIn</h3>
-  </a>
+    <a href="mailto:snarayanan27031973_bec27@mepcoeng.ac.in" class="contact-item">
+      <img src="icons/message.png" alt="Email">
+      <h3>Email</h3>
+    </a>
 
-</div>
- </section>
-</center>
+    <a href="tel:+916380421564" class="contact-item">
+      <img src="icons/contact.png" alt="Phone">
+      <h3>Call</h3>
+    </a>
 
+    <a href="https://www.linkedin.com/in/vishwan26012006"
+       target="_blank"
+       class="contact-item">
+      <img src="icons/linkedin.png" alt="LinkedIn">
+      <h3>LinkedIn</h3>
+    </a>
 
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer>
-    <p>© 2025 Vishwa N — All Rights Reserved.</p>
+  <p>© 2025 Vishwa N — All Rights Reserved.</p>
 </footer>
 
+<!-- ================= SCRIPT ================= -->
 <script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script>feather.replace();</script>
 
 </body>
 </html>
-
-
-
-
