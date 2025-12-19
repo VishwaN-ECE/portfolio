@@ -1,12 +1,11 @@
-// ✅ REPLACE THESE URLs WITH YOUR JSON LINKS
-const skillsURL = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/refs/heads/main/skills.json";
-const projectURL = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/main/projects.json";
-const certURL    = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/main/certifications.json";
-const achieveURL = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/refs/heads/main/achievements.json";
+// ================= JSON URLs =================
+const skillsURL   = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/main/skills.json";
+const projectsURL = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/main/projects.json";
+const certURL     = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/main/certifications.json";
+const achieveURL  = "https://raw.githubusercontent.com/Vishwa-Narayanan-dev/vishwa-portfolio-data/main/achievements.json";
 
 
-// ---------------- SKILLS ----------------
-const skillsURL = "skills.json";
+// ================= SKILLS =================
 const skillsGrid = document.querySelector(".skills-grid");
 
 async function loadSkills() {
@@ -18,7 +17,7 @@ async function loadSkills() {
   skills.forEach(skill => {
     skillsGrid.innerHTML += `
       <div class="skill-card">
-        <img src="${skill.icon}" alt="${skill.name}">
+        <img src="${skill.icon}" alt="${skill.name}" width="48" height="48">
         <p>${skill.name}</p>
       </div>
     `;
@@ -28,14 +27,12 @@ async function loadSkills() {
 loadSkills();
 
 
-
-// ---------------- PROJECTS ----------------
+// ================= PROJECTS =================
 const projectsGrid = document.querySelector(".projects-grid");
 const filterButtons = document.querySelectorAll(".project-filters button");
 
 let allProjects = [];
 
-// Load projects
 async function loadProjects() {
   const res = await fetch(projectsURL);
   allProjects = await res.json();
@@ -57,11 +54,10 @@ function displayProjects(projects) {
   });
 }
 
-// Filter logic
+// Filter buttons
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
 
-    // Active button UI
     filterButtons.forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
 
@@ -71,7 +67,7 @@ filterButtons.forEach(button => {
       displayProjects(allProjects);
     } else {
       const filtered = allProjects.filter(
-        project => project.category === filter
+        p => p.category === filter
       );
       displayProjects(filtered);
     }
@@ -81,35 +77,38 @@ filterButtons.forEach(button => {
 loadProjects();
 
 
-// ---------------- CERTIFICATIONS ----------------
+// ================= CERTIFICATIONS =================
 const certList = document.getElementById("cert-list");
 
 async function loadCerts() {
-    const res = await fetch(certURL);
-    const data = await res.json();
-    certList.innerHTML = "";
+  const res = await fetch(certURL);
+  const data = await res.json();
 
-    data.forEach(c => {
-        certList.innerHTML += `
-            <div class="cert-card">
-                <img src="${c.icon}" class="cert-icon">
-                <div>
-                    <b>${c.name}</b><br>
-                    ${c.platform}
-                </div>
-            </div>`;
-    });
+  certList.innerHTML = "";
+
+  data.forEach(c => {
+    certList.innerHTML += `
+      <div class="cert-card">
+        <img src="${c.icon}" class="cert-icon" alt="${c.name}">
+        <div>
+          <b>${c.name}</b><br>
+          <small>${c.platform}</small>
+        </div>
+      </div>
+    `;
+  });
 }
 
 loadCerts();
 
 
-// ---------------- ACHIEVEMENTS ----------------
+// ================= ACHIEVEMENTS =================
 const achieveList = document.getElementById("achievement-list");
 
 async function loadAchievements() {
   const res = await fetch(achieveURL);
   const data = await res.json();
+
   achieveList.innerHTML = "";
 
   data.forEach(a => {
@@ -127,7 +126,3 @@ async function loadAchievements() {
 }
 
 loadAchievements();
-
-
-
-
