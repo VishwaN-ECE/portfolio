@@ -21,31 +21,53 @@ loadSkills();
 
 
 // ---------------- PROJECTS ----------------
-const projectGrid = document.querySelector(".projects-grid");
-let projects = [];
+const projectsGrid = document.querySelector(".projects-grid");
+const filterButtons = document.querySelectorAll(".project-filters button");
 
+let allProjects = [];
+
+// Load projects
 async function loadProjects() {
-  const res = await fetch(projectURL);
-  projects = await res.json();
-  displayProjects("all");
+  const res = await fetch(projectsURL);
+  allProjects = await res.json();
+  displayProjects(allProjects);
 }
 
-function displayProjects(category) {
-  projectGrid.innerHTML = "";
+function displayProjects(projects) {
+  projectsGrid.innerHTML = "";
 
-  projects
-    .filter(p => category === "all" || p.category === category)
-    .forEach(p => {
-      projectGrid.innerHTML += `
-        <div class="project-card">
-          <img src="${p.image}" alt="${p.title}">
-          <h3>${p.title}</h3>
-          <span class="project-category">${p.category}</span>
-          <p>${p.description}</p>
-        </div>
-      `;
-    });
+  projects.forEach(project => {
+    projectsGrid.innerHTML += `
+      <div class="project-card">
+        <img src="${project.image}" alt="${project.title}">
+        <h3>${project.title}</h3>
+        <p class="category">${project.category}</p>
+        <p>${project.description}</p>
+      </div>
+    `;
+  });
 }
+
+// Filter logic
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+
+    // Active button UI
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    const filter = button.dataset.filter;
+
+    if (filter === "All") {
+      displayProjects(allProjects);
+    } else {
+      const filtered = allProjects.filter(
+        project => project.category === filter
+      );
+      displayProjects(filtered);
+    }
+  });
+});
 
 loadProjects();
 
@@ -96,5 +118,6 @@ async function loadAchievements() {
 }
 
 loadAchievements();
+
 
 
