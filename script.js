@@ -29,17 +29,13 @@ loadSkills();
 
 
 // ================= PROJECTS =================
-const projectsGrid  = document.querySelector(".projects-grid");
-const filterButtons = document.querySelectorAll(".project-filters button");
 
-let allProjects = [];
+const projectsGrid = document.querySelector(".projects-grid");
 
 async function loadProjects() {
-  if (!projectsGrid) return;
-
   const res = await fetch(projectsURL);
-  allProjects = await res.json();
-  displayProjects(allProjects);
+  const projects = await res.json();
+  displayProjects(projects);
 }
 
 function displayProjects(projects) {
@@ -56,27 +52,6 @@ function displayProjects(projects) {
     `;
   });
 }
-/*
-// Filter buttons
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-
-    filterButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    const filter = button.dataset.filter;
-
-    if (filter === "All") {
-      displayProjects(allProjects);
-    } else {
-      const filtered = allProjects.filter(
-        p => p.category === filter
-      );
-      displayProjects(filtered);
-    }
-  });
-});
-*/
 
 loadProjects();
 
@@ -190,3 +165,4 @@ function typeSub() {
 
 // Start animation
 typeMain();
+
