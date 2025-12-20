@@ -64,6 +64,7 @@ body {
 .navbar ul {
     display: flex;
     gap: 25px;
+    list-style:none;
 }
 
 .navbar a {
@@ -319,6 +320,7 @@ footer {
   white-space: nowrap;
   overflow: hidden;
 }
+
 
 
 
