@@ -185,6 +185,8 @@ body {
 
 .project-card:hover {
   transform: translateY(-6px);
+  color:##c26bf2;
+
 }
 
 .project-card img {
@@ -234,11 +236,12 @@ body {
 
 .cert-card:hover {
   transform: translateY(-6px);
+  color:##c26bf2;
 }
 
 .cert-card img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;        /* IMPORTANT for icons */
   margin: 0 auto;
 }
@@ -316,6 +319,7 @@ footer {
   white-space: nowrap;
   overflow: hidden;
 }
+
 
 
 
